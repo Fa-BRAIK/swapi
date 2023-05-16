@@ -31,4 +31,6 @@ Route::get('starships', [ StarshipController::class, 'index' ]);
 
 // Option C : include all routes in one file by using a variable to determine the resource
 // we can also pass a query param ?search=luke in this case
+// in order to use it we would have to disable the other routes above
+// or put this route at the top of the file so it gets matched first
 Route::get('/{resource}', [ ResourceController::class, 'index' ]);
