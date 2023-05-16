@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PeopleController;
-use App\Http\Controllers\PlanetController;
-use App\Http\Controllers\StarshipController;
-use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\Api\PeopleController;
+use App\Http\Controllers\Api\PlanetController;
+use App\Http\Controllers\Api\StarshipController;
+use App\Http\Controllers\Api\ResourceController;
 
 /*
 |--------------------------------------------------------------------------
