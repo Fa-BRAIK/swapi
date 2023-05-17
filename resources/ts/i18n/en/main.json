@@ -1,0 +1,11 @@
+{
+    "search": "Search",
+    "go": "Go",
+    "swapi": "Swapi",
+    "tabs": {
+        "people": "People",
+        "planets": "Planets",
+        "starships": "Starships"
+    },
+    "or-checkout": "or checkout"
+}
