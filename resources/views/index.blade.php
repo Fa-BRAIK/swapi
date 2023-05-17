@@ -6,10 +6,12 @@
 
         <title>@lang('main.home')</title>
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite('resources/css/app.css')
     </head>
-    
+
     <body>
-        
+        <div id="app"></div>
+
+        @vite('resources/ts/app.ts')
     </body>
 </html>
