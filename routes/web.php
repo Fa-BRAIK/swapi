@@ -14,4 +14,6 @@ use App\Http\Controllers\AppController;
 |
 */
 
-Route::get('/', [ AppController::class, 'index' ]);
+Route::get('/{any}', [ AppController::class, 'index' ])
+    ->where('any', '.*')
+    ->name('index');
