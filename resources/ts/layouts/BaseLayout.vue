@@ -1,6 +1,6 @@
 <template>
     <header
-        class="w-100 flex flex-col justify-center items-center text-center md:flex-row md:text-left px-8 sm:px-16 md:px-32 lg:px-64 xl:px-[32rem] py-4 shadow-sm"
+        class="w-100 flex flex-col justify-center items-center text-center md:flex-row md:text-left px-8 sm:px-12 md:px-24 lg:px-50 xl:px-64 py-4 shadow-sm"
     >
         <h1 class="text-3xl flex-grow mb-4 md:mb-0">
             <RouterLink :to="{ name: 'index' }">
@@ -31,7 +31,7 @@
         </nav>
     </header>
 
-    <div class="pt-4 px-8 sm:px-16 md:px-32 lg:px-64 xl:px-[32rem]">
+    <div class="pt-4 px-8 sm:px-12 md:px-24 lg:px-50 xl:px-64">
         <slot />
     </div>
 </template>

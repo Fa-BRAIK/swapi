@@ -3,6 +3,7 @@
     "go": "Go",
     "swapi": "Swapi",
     "load-more": "Load more",
+    "search-for-a-person": "Search for a person",
     "tabs": {
         "people": "People",
         "planets": "Planets",

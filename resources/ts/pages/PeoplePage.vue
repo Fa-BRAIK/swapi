@@ -3,7 +3,7 @@ import { onBeforeMount } from "vue";
 import BaseLayout from "../layouts/BaseLayout.vue";
 import { useList } from "../composables/useList.composable";
 
-const { people, nextLink, get } = useList();
+const { search, people, nextLink, get } = useList();
 
 onBeforeMount(async () => await get('people'));
 </script>

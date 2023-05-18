@@ -2,8 +2,13 @@ import { ref, Ref, computed } from "vue";
 import { People } from "../interfaces/people.interface";
 import { Planet } from "../interfaces/planet.interface";
 import { Starship } from "../interfaces/starships.interface";
+import { useRoute } from 'vue-router';
 
 export const useList = () => {
+    const route = useRoute();
+
+    const search: Ref<string> = ref(<string>route.query.search ?? '')
+
     const list: Ref<Array<People|Planet|Starship>> = ref([]);
     const nextLink: Ref<null | string> = ref(null);
 
@@ -27,7 +32,8 @@ export const useList = () => {
                 params: {
                     page: nextLink.value 
                         ? new URL(nextLink.value).searchParams.get("page") ?? 1
-                        : undefined
+                        : undefined,
+                    search: search.value
                 },
             })
             .then((response) => {
@@ -46,6 +52,7 @@ export const useList = () => {
         planets,
         starships,
         nextLink,
+        search,
         get
     }
 };

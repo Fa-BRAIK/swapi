@@ -1,5 +1,17 @@
 <script lang="ts" setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 import EmptyLayout from "../layouts/EmptyLayout.vue";
+
+const router = useRouter();
+
+const search = ref("");
+
+const startSearch = async () => {
+    if (search.value) {
+        await router.push({ name: "people", query: { search: search.value } });
+    }
+};
 </script>
 
 <template>
@@ -11,7 +23,7 @@ import EmptyLayout from "../layouts/EmptyLayout.vue";
                 {{ $t("main.swapi") }}
             </h2>
 
-            <form class="flex">
+            <form class="flex" @submit.prevent="startSearch">
                 <label for="search" class="flex flex-col">
                     {{ $t("main.search") }}
 
@@ -20,6 +32,8 @@ import EmptyLayout from "../layouts/EmptyLayout.vue";
                             type="text"
                             name="search"
                             class="min-w-[250px] w-[50vw] h-8 rounded-l outline px-2"
+                            :placeholder="$t('main.search-for-a-person')"
+                            v-model="search"
                         />
 
                         <button
@@ -32,7 +46,7 @@ import EmptyLayout from "../layouts/EmptyLayout.vue";
                 </label>
             </form>
 
-            <h4 class="text-2xl uppercase">{{ $t('main.or-checkout') }}</h4>
+            <h4 class="text-2xl uppercase">{{ $t("main.or-checkout") }}</h4>
 
             <div class="flex gap-5">
                 <RouterLink
