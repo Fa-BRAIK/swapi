@@ -2,14 +2,23 @@
 import { onBeforeMount } from "vue";
 import BaseLayout from "../layouts/BaseLayout.vue";
 import { useList } from "../composables/useList.composable";
+import SearchInput from "../components/SearchInput.vue";
 
-const { search, people, nextLink, get } = useList();
+const { search, people, nextLink, get, getSearch } = useList();
 
-onBeforeMount(async () => await get('people'));
+onBeforeMount(async () => await get("people"));
 </script>
 
 <template>
     <BaseLayout>
+        <div class="flex flex-col items-center gap-8 justify-center mb-12">
+            <h2 class="text-5xl">{{ $t("main.tabs.people") }}</h2>
+
+            <form class="flex" @submit.prevent="getSearch('people')">
+                <SearchInput v-model="search" />
+            </form>
+        </div>
+
         <div class="max-w-[100%] w-100 overflow-x-auto">
             <table class="w-[100%] text-center">
                 <thead>

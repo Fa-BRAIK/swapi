@@ -2,10 +2,11 @@ import { ref, Ref, computed } from "vue";
 import { People } from "../interfaces/people.interface";
 import { Planet } from "../interfaces/planet.interface";
 import { Starship } from "../interfaces/starships.interface";
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 export const useList = () => {
     const route = useRoute();
+    const router = useRouter();
 
     const search: Ref<string> = ref(<string>route.query.search ?? '')
 
@@ -47,12 +48,22 @@ export const useList = () => {
             });
     };
 
+    const getSearch = async (
+        resource: string,
+    ) => {
+        await router.push({ name: "people", query: { search: search.value } });
+        list.value.length = 0;
+        nextLink.value = null;
+        await get(resource);
+    }
+
     return {
         people,
         planets,
         starships,
         nextLink,
         search,
-        get
+        get,
+        getSearch
     }
 };

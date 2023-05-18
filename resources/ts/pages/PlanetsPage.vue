@@ -10,6 +10,10 @@ onBeforeMount(async () => await get('planets'));
 
 <template>
     <BaseLayout>
+        <div class="flex flex-col items-center gap-8 justify-center mb-12">
+            <h2 class="text-5xl">{{ $t("main.tabs.planets") }}</h2>
+        </div>
+
         <div class="max-w-[100%] w-100 overflow-x-auto">   
             <table class="w-[100%] text-center">
                 <thead>

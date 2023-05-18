@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import EmptyLayout from "../layouts/EmptyLayout.vue";
+import SearchInput from '../components/SearchInput.vue';
 
 const router = useRouter();
 
@@ -24,26 +25,7 @@ const startSearch = async () => {
             </h2>
 
             <form class="flex" @submit.prevent="startSearch">
-                <label for="search" class="flex flex-col">
-                    {{ $t("main.search") }}
-
-                    <div class="flex">
-                        <input
-                            type="text"
-                            name="search"
-                            class="min-w-[250px] w-[50vw] h-8 rounded-l outline px-2"
-                            :placeholder="$t('main.search-for-a-person')"
-                            v-model="search"
-                        />
-
-                        <button
-                            type="submit"
-                            class="bg-blue-600 outline outline-blue-600 text-white px-4 py-0 rounded-r hover:bg-blue-800 hover:outline-blue-800"
-                        >
-                            {{ $t("main.go") }}
-                        </button>
-                    </div>
-                </label>
+               <SearchInput v-model="search" />
             </form>
 
             <h4 class="text-2xl uppercase">{{ $t("main.or-checkout") }}</h4>
