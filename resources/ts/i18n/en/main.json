@@ -2,10 +2,56 @@
     "search": "Search",
     "go": "Go",
     "swapi": "Swapi",
+    "load-more": "Load more",
     "tabs": {
         "people": "People",
         "planets": "Planets",
         "starships": "Starships"
     },
-    "or-checkout": "or checkout"
+    "or-checkout": "or checkout",
+    "people": {
+        "name": "Name",
+        "birth_year": "Birth year",
+        "eye_color": "Eye color",
+        "gender": "Gender",
+        "hair_color": "Hair color",
+        "height": "Height",
+        "mass": "Mass",
+        "skin_color": "Skin color",
+        "homeworld": "Homeworld",
+        "films": "Films",
+        "species": "Species",
+        "starships": "Starships",
+        "vehicles": "Vehicles"
+    },
+    "planets": {
+        "name": "Name",
+        "diameter": "Diameter",
+        "rotation_period": "Rotation period",
+        "orbital_period": "Orbital period",
+        "gravity": "Gravity",
+        "population": "Population",
+        "climate": "Climate",
+        "terrain": "Terrain",
+        "surface_water": "Surface water",
+        "residents": "Residents",
+        "films": "Films"
+    },
+    "starships": {
+        "name": "Name",
+        "model": "Model",
+        "manufacturer": "Manufacturer",
+        "cost_in_credits": "Cost in credits",
+        "length": "Length",
+        "max_atmosphering_speed": "Max atmosphering speed",
+        "crew": "Crew",
+        "passengers": "Passengers",
+        "cargo_capacity": "Cargo capacity",
+        "consumables": "Consumables",
+        "hyperdrive_rating": "Hyperdrive rating",
+        "mglt": "MGLT",
+        "starship_class": "Starship class",
+        "pilots": "Pilots",
+        "films": "Films"
+    }
 }

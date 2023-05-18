@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class PlanetController extends Controller
 {
-    public function index(): JsonResponse 
+    public function index(Request $request): JsonResponse 
     {
-        $response = Http::swapi()->get('planets');
+        $response = Http::swapi()->get('planets', $request->only('page'));
 
         return response()->json(
             $response->json(), 

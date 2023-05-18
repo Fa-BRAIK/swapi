@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class StarshipController extends Controller
 {
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $response = Http::swapi()->get('starships');
+        $response = Http::swapi()->get('starships', $request->only('page'));
 
         return response()->json(
             $response->json(),
